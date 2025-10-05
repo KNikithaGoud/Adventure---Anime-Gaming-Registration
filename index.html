@@ -1,259 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Join the Adventure - Anime Gaming Registration</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=PT+Sans&family=Permanent+Marker&display=swap');
-  body, html {
-    margin: 0; padding: 0; height: 100%;
-    background: linear-gradient(135deg, #1e003d 0%, #490092 100%);
-    font-family: 'PT Sans', sans-serif;
-    color: #eee;
-    overflow-x: hidden;
-  }
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    gap: 20px;
-  }
-  .left-side {
-    flex: 1 1 420px;
-    max-width: 420px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 20px;
-    box-shadow: 0 0 40px #9b30ffaa;
-    padding: 30px 25px 50px 25px;
-    position: relative;
-  }
-  .btn-group {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  .btn-group button {
-    font-family: 'Permanent Marker', cursive;
-    background: linear-gradient(45deg, #e600ff, #7c00ff);
-    border: none;
-    outline: none;
-    color: white;
-    padding: 12px 30px;
-    font-size: 1.4rem;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow:
-      0 0 9px #ff00ffaa,
-      0 0 30px #a14fe7ff inset;
-    transition: background 0.3s ease;
-    text-shadow: 0 0 6px #dfb0ff;
-    user-select: none;
-  }
-  .btn-group button:hover, .btn-group button.active {
-    background: linear-gradient(45deg, #b900f9, #4e0094);
-    box-shadow:
-      0 0 18px 4px #d112d1,
-      inset 0 0 30px #b335db;
-  }
-  .form-box {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-  }
-  .form-box.active {
-    display: flex;
-  }
-  .form-box h2 {
-    font-family: 'Krona One', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 24px;
-    color: #ce8aff;
-    text-shadow: 0 0 12px #ac5bff;
-  }
-  .form-box form {
-    width: 100%;
-  }
-  .form-box input {
-    width: 100%;
-    padding: 14px 16px;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-    border-radius: 12px;
-    border: none;
-    outline: none;
-    color: #333;
-    box-shadow: 0 0 14px #bb8aff40 inset;
-    transition: box-shadow 0.3s ease;
-  }
-  .form-box input:focus {
-    box-shadow: 0 0 24px #b474ff inset;
-  }
-  .submit-btn {
-    width: 100%;
-    background: linear-gradient(90deg, #cc25ff, #7c21ff);
-    border: none;
-    border-radius: 25px;
-    padding: 16px 0;
-    color: white;
-    font-size: 1.4rem;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow:
-      0 0 24px #e248ff,
-      inset 0 0 42px #7c21ff;
-    text-shadow: 0 0 12px #dd82ff;
-    transition: background 0.4s ease;
-    animation: pulse 2.5s infinite alternate ease-in-out;
-  }
-  .submit-btn:hover {
-    background: linear-gradient(90deg, #bb2aff, #6419ff);
-  }
-  @keyframes pulse {
-    0% {
-      box-shadow:
-      0 0 22px #e248ff,
-      inset 0 0 40px #7c21ff;
-    }
-    100% {
-      box-shadow:
-      0 0 36px #ff6aff,
-      inset 0 0 48px #8a33ff;
-    }
-  }
-  .right-side {
-    flex: 1 1 360px;
-    max-width: 360px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    position: relative;
-  }
-  .right-side video{
-    max-width: 320px;
-    height: 90vb;
-    border-radius: 20px;
-    box-shadow: 0 0 40px 6px #e275ffdd;
-    animation: float 5s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px);}
-  }
-  .boys-playing {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-  }
-  .boys-playing img {
-    max-width: 480px;
-    border-radius: 30px;
-    box-shadow: 0 0 40px #bb77ffcc;
-    animation: slideUp 1.5s ease forwards;
-  }
-  @keyframes slideUp {
-    0% { opacity: 0; transform: translateY(30px);}
-    100% { opacity: 1; transform: translateY(0);}
-  }
-  @media (max-width: 900px) {
-    .container {
-      flex-direction: column;
-      padding: 10px;
-    }
-    .left-side, .right-side {
-      max-width: 90vw;
-      flex: auto;
-    }
-    .right-side {
-      margin-top: 30px;
-      align-items: center;
-    }
-    .boys-playing img {
-      max-width: 90vw;
-    }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Anime Gaming Registration</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-  <div class="left-side">
-    <div class="btn-group">
-      <button id="registerBtn" class="active">Register</button>
-      <button id="signupBtn">Sign Up</button>
-      <button id="signinBtn">Sign In</button>
-    </div>
-    <div id="registerForm" class="form-box active">
-      <h2>Join the Adventure!</h2>
-      <form>
-        <input type="text" placeholder="Full Name" required />
-        <input type="text" placeholder="Username" required />
-        <input type="email" placeholder="Email Address" required />
-        <input type="password" placeholder="Create Password" required />
-        <button type="submit" class="submit-btn">Register Now</button>
-      </form>
-    </div>
-    <div id="signupForm" class="form-box">
-      <h2>Sign Up</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <input type="password" placeholder="Password" required />
-        <button type="submit" class="submit-btn">Sign Up</button>
-      </form>
-    </div>
-    <div id="signinForm" class="form-box">
-      <h2>Sign In</h2>
-      <form>
-        <input type="text" placeholder="Username or Email" required />
-        <input type="password" placeholder="Password" required />
-        <button type="submit" class="submit-btn">Sign In</button>
-      </form>
-    </div>
-    <div class="boys-playing">
-      <img src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/2242654c-0ee6-42fa-8625-c26b241f6dde.png" alt="Two anime boys playing" />
-    </div>
-  </div>
-  <div class="right-side">
-    <video autoplay loop muted playsinline>
-      <source src="https://user-gen-media-assets.s3.amazonaws.com/seedance_videos/a69da728-3b1a-46c5-b319-ed778eb751c8.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
-<script>
-  const registerBtn = document.getElementById('registerBtn');
-  const signupBtn = document.getElementById('signupBtn');
-  const signinBtn = document.getElementById('signinBtn');
-  const registerForm = document.getElementById('registerForm');
-  const signupForm = document.getElementById('signupForm');
-  const signinForm = document.getElementById('signinForm');
-  function setActive(button) {
-    registerBtn.classList.remove('active');
-    signupBtn.classList.remove('active');
-    signinBtn.classList.remove('active');
-    button.classList.add('active');
-  }
-  registerBtn.addEventListener('click', () => {
-    setActive(registerBtn);
-    registerForm.classList.add('active');
-    signupForm.classList.remove('active');
-    signinForm.classList.remove('active');
-  });
-  signupBtn.addEventListener('click', () => {
-    setActive(signupBtn);
-    signupForm.classList.add('active');
-    registerForm.classList.remove('active');
-    signinForm.classList.remove('active');
-  });
-  signinBtn.addEventListener('click', () => {
-    setActive(signinBtn);
-    signinForm.classList.add('active');
-    registerForm.classList.remove('active');
-    signupForm.classList.remove('active');
-  });
-</script>
+    <header>
+        <h1>Welcome to Adventure Anime Gaming!</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Register Now!</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <input type="submit" value="Register">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Adventure Anime Gaming. All rights reserved.</p>
+    </footer>
 </body>
 </html>
